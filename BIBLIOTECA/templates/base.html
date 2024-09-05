@@ -19,58 +19,43 @@
             <div class="logo">Biblioteca</div>
             <ul class="navegacion">
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
+                    <a href="{% url 'index' %}" class="navegacion-links {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
                         <i class="fa fa-home" aria-hidden="true"></i> Dashboard
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-building" aria-hidden="true"></i> Libros
+                    <a href="{% url 'libros' %}" class="navegacion-links {% if request.resolver_match.url_name == 'libros' %}active{% endif %}">
+                        <i class="fa-solid fa-book"></i> Libros
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
+                    <a href="{% url 'editorial' %}" class="navegacion-links {% if request.resolver_match.url_name == 'editorial' %}active{% endif %}">
                         <i class="fa fa-newspaper-o" aria-hidden="true"></i> Editoriales
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    <a href="{% url 'usuarios' %}" class="navegacion-links {% if request.resolver_match.url_name == 'usuarios' %}active{% endif %}">
+                        <i class="fa fa-user-circle" aria-hidden="true"></i> Usuarios
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Contraseña
+                    <a href="{% url 'socios' %}" class="navegacion-links {% if request.resolver_match.url_name == 'socios' %}active{% endif %}">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> Socios
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    <a href="{% url 'prestamos' %}" class="navegacion-links {% if request.resolver_match.url_name == 'prestamos' %}active{% endif %}">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i> Prestamos
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    <a href="{% url 'inventario' %}" class="navegacion-links {% if request.resolver_match.url_name == 'inventario' %}active{% endif %}">
+                        <i class="fa fa-list-ol" aria-hidden="true"></i> Inventario
                     </a>
                 </li>
                 <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
-                    </a>
-                </li>
-                <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
-                    </a>
-                </li>
-                <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
-                    </a>
-                </li>
-                <li class="navegacion-items">
-                    <a href="#" class="navegacion-links">
-                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    <a href="{% url 'historial' %}" class="navegacion-links {% if request.resolver_match.url_name == 'historial' %}active{% endif %}">
+                        <i class="fa fa-th-list" aria-hidden="true"></i> Historial
                     </a>
                 </li>
             </ul>
@@ -99,6 +84,7 @@
 
             <div class="container-fluid mb-2">
                 {% block content %}
+                {% block agregar %}  {% endblock %}
 
 {% endblock %}
                 <footer class="pie-de-pagina mt-auto">
