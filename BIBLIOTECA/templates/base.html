@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7d9141c5ec.js"></script>
+    <title>{% block titulo %} {% endblock %}</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link type='text/css' rel="stylesheet" href='{% static "css/style.css" %}'>
+</head>
+
+<body>
+    <div class="d-flex" id="custom-wrapper">
+        <div class="barra-lateral">
+            <div class="logo">Biblioteca</div>
+            <ul class="navegacion">
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-building" aria-hidden="true"></i> Libros
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-newspaper-o" aria-hidden="true"></i> Editoriales
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Contraseña
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+                <li class="navegacion-items">
+                    <a href="#" class="navegacion-links">
+                        <i class="fa fa-key" aria-hidden="true"></i> Inventario
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Contenido de la Página -->
+        <div id="contenido-de-la-pagina" class="flex-grow-1">
+            <!-- Navbar -->
+            <nav class="barra-superior">
+                <button class="boton-menu" id="custom-menu-toggle">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <div class="titulo">
+                    <h3> {% block nav-title%} {% endblock%} </h3>
+                </div>
+                <div class="opciones-barra-superior">
+                    <ul class="opciones">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../validate/cerrar.php">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="container-fluid mb-2">
+                {% block content %}
+
+{% endblock %}
+                <footer class="pie-de-pagina mt-auto">
+                    <div class="pie-contenido text-center">
+                        Copyright © 2024 <a href="#" style="font-weight:bold">MC Danny.</a> Todos los derechos reservados.
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Enlace a DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Enlace a Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Script para el toggle del menú
+        document.getElementById("custom-menu-toggle").addEventListener("click", function () {
+            document.getElementById("custom-wrapper").classList.toggle("toggled");
+        });
+    </script>
+
+</body>
+
+</html>

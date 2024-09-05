@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.http import HttpResponse
+from django.shortcuts import render
+
 def Inicio(request):
-    return HttpResponse("Pagina Inicial")
+    return render(request, 'libros/libros.html')

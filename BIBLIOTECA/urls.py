@@ -1,7 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-from . import views  # Asegúrate de que esto esté correcto
+from . import views
 
 urlpatterns = [
-    path('', views.Inicio, name='inicio'),
+    path('libros', views.Inicio, name='libros'),
 ]
